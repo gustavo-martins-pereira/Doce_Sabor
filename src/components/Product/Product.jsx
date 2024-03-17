@@ -2,6 +2,10 @@ import styled from "styled-components";
 
 const ProductWrapper = styled.section`
     width: min-content;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     
     font-family: var(--ultra-font);
     text-align: center;
@@ -28,8 +32,10 @@ const Price = styled.h3`
 export function Product({ src, name, price }) {
     return (
         <ProductWrapper>
-            <ProductImage src={src} alt={name} />
-            <Name>{name}</Name>
+            <div>
+                <ProductImage src={src} alt={name} />
+                <Name>{name}</Name>
+            </div>
             <Price>R$ {String(price).replace(".", ",")}</Price>
         </ProductWrapper>
     );
